@@ -1,4 +1,4 @@
-import Cookie from "./Cookie.js";
+import Cookie from "./cookie.js";
 import { create2DArray } from "./utils.js";
 
 /* Classe principale du jeu, c'est une grille de cookies. Le jeu se joue comme
@@ -67,7 +67,13 @@ export default class Grille {
         // si 0 on ajoute le cookie cliqué au tableau
         // si 1 on ajoute le cookie cliqué au tableau
         // et on essaie de swapper
+        if (this.cookieSelectionnes.length === 0) {
+          this.cookieSelectionnes.push(cookie);
+        } else if (this.cookieSelectionnes.length === 1) {
+          this.cookieSelectionnes.push(cookie);
+          Cookie.swapCookies(this.cookieSelectionnes[0], this.cookieSelectionnes[1]);
       }
+      };
 
       // A FAIRE : ecouteur de drag'n'drop
       

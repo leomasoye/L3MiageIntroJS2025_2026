@@ -83,7 +83,24 @@ export default class Cookie {
 
     // On regarde la distance entre les deux cookies
     // si elle est de 1, on peut les swapper
-   
+    if (Cookie.distance(c1, c2) === 1) {
+
+      let img1 = c1.htmlImage;
+      let img2 = c2.htmlImage;
+
+      c2.htmlImage = img1;
+      c1.htmlImage = img2;
+
+      let tempLigne = c1.ligne;
+      let tempColonne = c1.colonne;
+
+      c1.ligne = c2.ligne;
+      c1.colonne = c2.colonne;
+
+      c2.ligne = tempLigne;
+      c2.colonne = tempColonne;
+      
+    }
   }
 
   /** renvoie la distance au sens "nombre de cases" 
